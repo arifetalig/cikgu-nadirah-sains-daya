@@ -14,10 +14,10 @@
     line-height: 1.7;
   }
 
-  /* Header */
+  /* ============ HERO ============ */
   .hero {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
-    padding: 40px 20px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 30%, #4facfe 100%);
+    padding: 30px 20px 20px;
     text-align: center;
     color: white;
     position: relative;
@@ -38,22 +38,19 @@
     0% { transform: translate(0,0); }
     100% { transform: translate(30px,30px); }
   }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-illustration { max-width: 500px; margin: 0 auto 10px; }
   .hero h1 {
     font-size: 2.8em;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 1;
   }
   .hero p {
     font-size: 1.2em;
     opacity: 0.95;
-    margin-top: 8px;
-    position: relative;
-    z-index: 1;
+    margin-top: 5px;
   }
-  .hero .emoji-big { font-size: 4em; display: block; margin-bottom: 10px; position: relative; z-index: 1; }
 
-  /* Navigation */
+  /* ============ NAV ============ */
   .nav-bar {
     background: white;
     padding: 12px 20px;
@@ -84,12 +81,8 @@
     box-shadow: 0 4px 12px rgba(102,126,234,0.4);
   }
 
-  /* Main Content */
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  /* ============ MAIN ============ */
+  .container { max-width: 920px; margin: 0 auto; padding: 20px; }
 
   .section {
     display: none;
@@ -120,17 +113,16 @@
     margin: 20px 0 10px;
   }
 
-  /* Cards */
+  /* ============ CARDS ============ */
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 16px;
     margin: 20px 0;
   }
   .force-card {
-    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
     border-radius: 16px;
-    padding: 20px;
+    padding: 16px;
     text-align: center;
     color: white;
     cursor: pointer;
@@ -141,9 +133,9 @@
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
   }
-  .force-card .icon { font-size: 3em; display: block; margin-bottom: 8px; }
+  .force-card .card-svg { height: 80px; margin-bottom: 6px; }
   .force-card .title { font-size: 1.1em; font-weight: 700; }
-  .force-card .desc { font-size: 0.85em; margin-top: 6px; opacity: 0.9; }
+  .force-card .desc { font-size: 0.8em; margin-top: 4px; opacity: 0.9; }
 
   .force-card:nth-child(1) { background: linear-gradient(135deg, #f093fb, #f5576c); }
   .force-card:nth-child(2) { background: linear-gradient(135deg, #4facfe, #00f2fe); }
@@ -151,10 +143,10 @@
   .force-card:nth-child(4) { background: linear-gradient(135deg, #fa709a, #fee140); }
   .force-card:nth-child(5) { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
 
-  /* Effects List */
+  /* ============ EFFECTS ============ */
   .effect-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 12px;
     margin: 15px 0;
   }
@@ -167,10 +159,10 @@
     transition: all 0.3s;
   }
   .effect-item:hover { border-color: #667eea; transform: scale(1.03); }
-  .effect-item .icon { font-size: 2.5em; display: block; }
-  .effect-item .text { font-weight: 600; color: #555; margin-top: 5px; }
+  .effect-item .effect-svg { height: 50px; display: block; margin: 0 auto 6px; }
+  .effect-item .text { font-weight: 600; color: #555; }
 
-  /* Interactive Activity */
+  /* ============ ACTIVITY ============ */
   .activity-area {
     background: #f8f9ff;
     border-radius: 16px;
@@ -248,13 +240,10 @@
     color: white;
   }
   button.check-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(102,126,234,0.5); }
-  button.reset-btn {
-    background: #f0f0f0;
-    color: #666;
-  }
+  button.reset-btn { background: #f0f0f0; color: #666; }
   button.reset-btn:hover { background: #e0e0e0; }
 
-  /* Quiz Section */
+  /* ============ QUIZ ============ */
   .quiz-container { margin: 20px 0; }
 
   .quiz-question {
@@ -327,13 +316,10 @@
     color: white;
   }
   button.quiz-check-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(67,233,123,0.5); }
-  button.quiz-reset-btn {
-    background: #f0f0f0;
-    color: #666;
-  }
+  button.quiz-reset-btn { background: #f0f0f0; color: #666; }
   button.quiz-reset-btn:hover { background: #e0e0e0; }
 
-  /* Teacher Notes */
+  /* ============ TEACHER NOTES ============ */
   .teacher-note {
     background: #fff3cd;
     border: 2px solid #ffc107;
@@ -345,46 +331,118 @@
   .teacher-note ul { margin-left: 20px; color: #856404; }
   .teacher-note li { margin: 5px 0; }
 
-  /* Footer */
+  /* ============ FOOTER ============ */
   .footer {
     text-align: center;
-    padding: 30px;
-    color: rgba(255,255,255,0.8);
-    font-size: 0.9em;
+    padding: 30px 20px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95em;
+  }
+  .footer .footer-svg { max-width: 180px; margin: 0 auto 10px; }
+  .footer .footer-divider {
+    width: 60px; height: 3px; background: rgba(255,255,255,0.3);
+    margin: 12px auto; border-radius: 3px;
   }
 
-  /* Video Placeholder */
-  .video-placeholder {
-    background: #1a1a2e;
-    border-radius: 16px;
-    padding: 40px;
-    text-align: center;
-    color: white;
-    margin: 20px 0;
+  /* ============ INFO BOXES ============ */
+  .info-box {
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
   }
-  .video-placeholder .icon { font-size: 3em; }
-  .video-placeholder p { margin-top: 10px; opacity: 0.8; }
+  .info-box ul { margin: 10px 0 0 25px; }
 
-  /* Responsive */
+  .info-blue { background: #e8f4f8; }
+  .info-orange { background: #fff0e6; }
+  .info-purple { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+  .info-purple ul { color: white; }
+
+  .info-box .box-svg { height: 60px; display: block; margin: 0 auto 10px; }
+
+  /* ============ ILLUSTRATIONS ============ */
+  .section-illu { text-align: center; margin-bottom: 15px; }
+  .section-illu svg { max-width: 250px; height: auto; }
+
+  .activity-illu { margin-bottom: 15px; }
+  .activity-illu svg { max-width: 180px; height: auto; }
+
+  /* ============ RESPONSIVE ============ */
   @media (max-width: 600px) {
     .hero h1 { font-size: 1.8em; }
     .section { padding: 20px; }
-    .card-grid { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr 1fr; }
     .effect-list { grid-template-columns: 1fr 1fr; }
     .nav-btn { padding: 8px 14px; font-size: 0.85em; }
+    .hero-illustration { max-width: 300px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ===== HERO ===== -->
+<!-- ==================== HERO ==================== -->
 <div class="hero">
-  <span class="emoji-big">⚡💪🔬</span>
-  <h1>🌍 Daya &amp; Gerakan</h1>
-  <p>Sains Tahun 6 | Sekolah Kebangsaan</p>
+  <div class="hero-content">
+    <div class="hero-illustration">
+      <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect x="0" y="0" width="500" height="200" rx="20" fill="rgba(255,255,255,0.15)"/>
+        <!-- Child 1 - pushing -->
+        <g transform="translate(50,70)">
+          <circle cx="25" cy="20" r="18" fill="#FFD93D"/>
+          <circle cx="18" cy="18" r="3" fill="#333"/>
+          <circle cx="32" cy="18" r="3" fill="#333"/>
+          <path d="M20 28 Q25 33 30 28" stroke="#333" stroke-width="2" fill="none"/>
+          <rect x="10" y="38" width="30" height="35" rx="5" fill="#6BCB77"/>
+          <line x1="5" y1="50" x2="-5" y2="75" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <line x1="45" y1="50" x2="60" y2="30" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <line x1="10" y1="73" x2="5" y2="95" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <line x1="40" y1="73" x2="45" y2="95" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <!-- Arrow -->
+          <line x1="70" y1="55" x2="100" y2="55" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+          <polygon points="100,55 88,48 88,62" fill="#FF6B6B"/>
+        </g>
+        <!-- Child 2 - pulling -->
+        <g transform="translate(210,70)">
+          <circle cx="25" cy="20" r="18" fill="#FFD93D"/>
+          <circle cx="18" cy="18" r="3" fill="#333"/>
+          <circle cx="32" cy="18" r="3" fill="#333"/>
+          <path d="M20 28 Q25 33 30 28" stroke="#333" stroke-width="2" fill="none"/>
+          <rect x="10" y="38" width="30" height="35" rx="5" fill="#4D96FF"/>
+          <line x1="45" y1="50" x2="65" y2="50" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <line x1="5" y1="50" x2="-10" y2="40" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <line x1="10" y1="73" x2="5" y2="95" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <line x1="40" y1="73" x2="45" y2="95" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <!-- Arrow -->
+          <line x1="-20" y1="55" x2="-50" y2="55" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+          <polygon points="-50,55 -38,48 -38,62" fill="#FF6B6B"/>
+        </g>
+        <!-- Child 3 - with magnet -->
+        <g transform="translate(370,70)">
+          <circle cx="25" cy="20" r="18" fill="#FFD93D"/>
+          <circle cx="18" cy="18" r="3" fill="#333"/>
+          <circle cx="32" cy="18" r="3" fill="#333"/>
+          <path d="M20 28 Q25 33 30 28" stroke="#333" stroke-width="2" fill="none"/>
+          <rect x="10" y="38" width="30" height="35" rx="5" fill="#FF6B6B"/>
+          <line x1="10" y1="50" x2="-5" y2="65" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <line x1="45" y1="50" x2="60" y2="65" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <line x1="10" y1="73" x2="5" y2="95" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <line x1="40" y1="73" x2="45" y2="95" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+          <!-- Magnet -->
+          <rect x="20" y="-15" width="10" height="12" rx="2" fill="#E74C3C"/>
+          <rect x="20" y="3" width="10" height="12" rx="2" fill="#E74C3C"/>
+          <rect x="17" y="-15" width="16" height="3" rx="1.5" fill="#C0392B"/>
+          <rect x="17" y="12" width="16" height="3" rx="1.5" fill="#C0392B"/>
+        </g>
+        <!-- Title text integrated -->
+        <text x="250" y="175" text-anchor="middle" font-size="22" font-weight="bold" fill="white">Mari Belajar Daya! 🚀</text>
+      </svg>
+    </div>
+    <h1>🌍 Daya &amp; Gerakan</h1>
+    <p>Sains Tahun 6 | Sekolah Kebangsaan</p>
+  </div>
 </div>
 
-<!-- ===== NAV ===== -->
+<!-- ==================== NAV ==================== -->
 <nav class="nav-bar">
   <button class="nav-btn active" onclick="showSection('pelajaran')">📖 Pelajaran</button>
   <button class="nav-btn" onclick="showSection('jenis')">🔽 Jenis Daya</button>
@@ -395,14 +453,52 @@
 
 <div class="container">
 
-<!-- ============ PELAJARAN ============ -->
+<!-- ==================== PELAJARAN ==================== -->
 <div id="pelajaran" class="section active">
+
+  <div class="section-illu">
+    <svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="300" height="140" rx="15" fill="#e8f4f8"/>
+      <!-- Girl with magnifying glass -->
+      <g transform="translate(40,30)">
+        <circle cx="20" cy="18" r="16" fill="#FFD93D"/>
+        <circle cx="14" cy="16" r="2.5" fill="#333"/>
+        <circle cx="26" cy="16" r="2.5" fill="#333"/>
+        <path d="M16 26 Q20 30 24 26" stroke="#333" stroke-width="2" fill="none"/>
+        <rect x="8" y="34" width="24" height="28" rx="4" fill="#FF9FF3"/>
+        <line x1="8" y1="62" x2="4" y2="80" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="32" y1="62" x2="36" y2="80" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="4" y1="45" x2="-8" y2="38" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="36" y1="45" x2="52" y2="38" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <!-- Boxes -->
+      <rect x="120" y="45" width="40" height="30" rx="3" fill="#F368E0"/>
+      <rect x="175" y="40" width="40" height="35" rx="3" fill="#54A0FF"/>
+      <rect x="145" y="20" width="40" height="30" rx="3" fill="#5F27CD"/>
+      <!-- Question marks -->
+      <text x="140" y="64" text-anchor="middle" font-size="14" fill="white" font-weight="bold">?</text>
+      <text x="195" y="62" text-anchor="middle" font-size="14" fill="white" font-weight="bold">?</text>
+      <text x="165" y="40" text-anchor="middle" font-size="14" fill="white" font-weight="bold">?</text>
+      <!-- Boy pointing -->
+      <g transform="translate(230,30)">
+        <circle cx="16" cy="18" r="16" fill="#FFD93D"/>
+        <circle cx="11" cy="16" r="2.5" fill="#333"/>
+        <circle cx="21" cy="16" r="2.5" fill="#333"/>
+        <path d="M13 26 Q16 30 19 26" stroke="#333" stroke-width="2" fill="none"/>
+        <rect x="4" y="34" width="24" height="28" rx="4" fill="#54A0FF"/>
+        <line x1="28" y1="45" x2="48" y2="30" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="4" y1="62" x2="0" y2="80" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="28" y1="62" x2="32" y2="80" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+
   <h2>📚 Apa Itu Daya?</h2>
 
-  <div style="background:#e8f4f8;border-radius:14px;padding:20px;margin-bottom:20px;">
+  <div class="info-box info-blue">
     <p style="font-size:1.15em;font-weight:600;color:#2c3e50;">🔍 <em>Daya</em> ialah <strong>tarikan atau tolakan</strong> yang bertindak ke atas sesuatu objek.</p>
     <p style="margin-top:10px;">Daya boleh menyebabkan objek:</p>
-    <ul style="margin:10px 0 0 25px;">
+    <ul>
       <li>✅ Bergerak</li>
       <li>✅ Berhenti</li>
       <li>✅ Berubah bentuk</li>
@@ -410,9 +506,9 @@
     </ul>
   </div>
 
-  <div style="background:#fff0e6;border-radius:14px;padding:20px;margin-bottom:20px;">
+  <div class="info-box info-orange">
     <h3 style="margin-top:0;border:none;padding:0;">📌 Contoh dalam Kehidupan Harian</h3>
-    <ul style="margin:10px 0 0 20px;">
+    <ul>
       <li><strong>Menolak kereta sorong</strong> — daya tolakan</li>
       <li><strong>Menarik tali</strong> — daya tarikan</li>
       <li><strong>Membuka pintu peti ais</strong> — daya tarikan</li>
@@ -421,40 +517,104 @@
     </ul>
   </div>
 
-  <div style="background:linear-gradient(135deg,#667eea,#764ba2);border-radius:16px;padding:30px;text-align:center;color:white;">
+  <div class="info-box info-purple" style="text-align:center;">
     <p style="font-size:1.3em;font-weight:700;">⚡ Ingat! ⚡</p>
     <p style="font-size:1.1em;margin-top:8px;">Daya tidak boleh dilihat, tetapi <strong>kesannya boleh diperhatikan</strong>!</p>
   </div>
 </div>
 
-<!-- ============ JENIS DAYA ============ -->
+<!-- ==================== JENIS DAYA ==================== -->
 <div id="jenis" class="section">
   <h2>🔽 Jenis-Jenis Daya</h2>
   <p style="color:#666;margin-bottom:16px;">Klik kad di bawah untuk belajar tentang setiap jenis daya:</p>
 
   <div class="card-grid">
     <div class="force-card" onclick="alert('💪 Daya TOLAKAN\n\nDaya yang menolak objek MENJAUHI kita.\n\nContoh: \n• Menolak meja\n• Meniup belon\n• Menekan butang')">
-      <span class="icon">👉</span>
+      <div class="card-svg">
+        <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="40" r="16" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="25" cy="36" r="2.5" fill="#fff"/>
+          <circle cx="35" cy="36" r="2.5" fill="#fff"/>
+          <path d="M27 45 Q30 49 33 45" stroke="#fff" stroke-width="2" fill="none"/>
+          <rect x="20" y="56" width="20" height="20" rx="3" fill="rgba(255,255,255,0.3)"/>
+          <line x1="50" y1="55" x2="75" y2="55" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <polygon points="75,55 65,48 65,62" fill="#fff"/>
+          <rect x="60" y="42" width="22" height="25" rx="3" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+      </div>
       <div class="title">Daya Tolakan</div>
       <div class="desc">Menolak objek menjauhi kita</div>
     </div>
     <div class="force-card" onclick="alert('🤲 Daya TARIKAN\n\nDaya yang menarik objek MENDEKATI kita.\n\nContoh: \n• Menarik tali\n• Membuka pintu\n• Mengangkat buku')">
-      <span class="icon">👈</span>
+      <div class="card-svg">
+        <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="40" r="16" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="45" cy="36" r="2.5" fill="#fff"/>
+          <circle cx="55" cy="36" r="2.5" fill="#fff"/>
+          <path d="M47 45 Q50 49 53 45" stroke="#fff" stroke-width="2" fill="none"/>
+          <rect x="40" y="56" width="20" height="20" rx="3" fill="rgba(255,255,255,0.3)"/>
+          <line x1="28" y1="55" x2="3" y2="55" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <polygon points="3,55 15,48 15,62" fill="#fff"/>
+          <rect x="5" y="42" width="18" height="25" rx="3" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+      </div>
       <div class="title">Daya Tarikan</div>
       <div class="desc">Menarik objek mendekati kita</div>
     </div>
     <div class="force-card" onclick="alert('🧲 Daya GESERAN\n\nDaya yang MELAWAN pergerakan. Semakin kasar permukaan, semakin besar daya geseran.\n\nContoh: \n• Brek basikal\n• Tapak kasut\n• Memadam pensel')">
-      <span class="icon">🧲</span>
+      <div class="card-svg">
+        <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="16" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="25" cy="26" r="2.5" fill="#fff"/>
+          <circle cx="35" cy="26" r="2.5" fill="#fff"/>
+          <path d="M27 35 Q30 39 33 35" stroke="#fff" stroke-width="2" fill="none"/>
+          <rect x="20" y="46" width="20" height="20" rx="3" fill="rgba(255,255,255,0.3)"/>
+          <line x1="50" y1="40" x2="75" y2="40" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <line x1="50" y1="55" x2="75" y2="55" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <!-- Zigzag friction -->
+          <polyline points="55,45 57,42 60,45 63,42 66,45 69,42 72,45 75,42" stroke="#FFEAA7" stroke-width="2" fill="none"/>
+          <rect x="72" y="32" width="18" height="30" rx="2" fill="rgba(255,255,255,0.4)"/>
+        </svg>
+      </div>
       <div class="title">Daya Geseran</div>
       <div class="desc">Melawan pergerakan objek</div>
     </div>
     <div class="force-card" onclick="alert('⬇️ Daya GRAVITI\n\nDaya tarikan BUMI yang menarik semua objek ke bawah.\n\nContoh: \n• Epal jatuh dari pokok\n• Air hujan turun\n• Bola jatuh ke lantai')">
-      <span class="icon">⬇️</span>
+      <div class="card-svg">
+        <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="20" r="16" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="45" cy="16" r="2.5" fill="#fff"/>
+          <circle cx="55" cy="16" r="2.5" fill="#fff"/>
+          <path d="M47 25 Q50 29 53 25" stroke="#fff" stroke-width="2" fill="none"/>
+          <rect x="40" y="36" width="20" height="20" rx="3" fill="rgba(255,255,255,0.3)"/>
+          <!-- Apple falling -->
+          <circle cx="50" cy="68" r="7" fill="#FF6B6B"/>
+          <line x1="50" y1="61" x2="50" y2="57" stroke="#5D4037" stroke-width="2"/>
+          <line x1="50" y1="68" x2="50" y2="80" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="4,4"/>
+          <polygon points="50,80 45,73 55,73" fill="#fff"/>
+        </svg>
+      </div>
       <div class="title">Daya Graviti</div>
       <div class="desc">Tarikan bumi ke bawah</div>
     </div>
     <div class="force-card" onclick="alert('🧲 Daya MAGNET\n\nDaya yang wujud pada MAGNET. Boleh menarik besi, keluli, nikel.\n\nContoh: \n• Magnet peti ais\n• Kompas\n• Mainan magnet')">
-      <span class="icon">🧲</span>
+      <div class="card-svg">
+        <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="16" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="25" cy="26" r="2.5" fill="#fff"/>
+          <circle cx="35" cy="26" r="2.5" fill="#fff"/>
+          <path d="M27 35 Q30 39 33 35" stroke="#fff" stroke-width="2" fill="none"/>
+          <rect x="20" y="46" width="20" height="20" rx="3" fill="rgba(255,255,255,0.3)"/>
+          <!-- Magnet U shape -->
+          <path d="M55 20 L55 45 L75 45 L75 20" stroke="#FF6B6B" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="53" y="15" width="6" height="12" rx="2" fill="#E74C3C"/>
+          <rect x="71" y="15" width="6" height="12" rx="2" fill="#E74C3C"/>
+          <!-- Paper clips -->
+          <line x1="55" y1="28" x2="55" y2="38" stroke="#fff" stroke-width="2"/>
+          <line x1="65" y1="28" x2="65" y2="40" stroke="#fff" stroke-width="2"/>
+          <line x1="75" y1="28" x2="75" y2="36" stroke="#fff" stroke-width="2"/>
+        </svg>
+      </div>
       <div class="title">Daya Magnet</div>
       <div class="desc">Daya pada magnet</div>
     </div>
@@ -462,18 +622,112 @@
 
   <h3 style="margin-top:25px;">🎯 Kesan Daya pada Objek</h3>
   <div class="effect-list">
-    <div class="effect-item"><span class="icon">🏃</span><span class="text">Menggerakkan objek</span></div>
-    <div class="effect-item"><span class="icon">✋</span><span class="text">Memberhentikan objek</span></div>
-    <div class="effect-item"><span class="icon">🔄</span><span class="text">Mengubah arah objek</span></div>
-    <div class="effect-item"><span class="icon">🌀</span><span class="text">Mengubah bentuk objek</span></div>
-    <div class="effect-item"><span class="icon">⚡</span><span class="text">Mengubah kelajuan</span></div>
+    <div class="effect-item">
+      <div class="effect-svg">
+        <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="25" r="12" fill="#4D96FF"/>
+          <circle cx="16" cy="22" r="2" fill="#fff"/>
+          <circle cx="24" cy="22" r="2" fill="#fff"/>
+          <path d="M17 28 Q20 31 23 28" stroke="#fff" stroke-width="1.5" fill="none"/>
+          <rect x="12" y="37" width="16" height="12" rx="3" fill="#4D96FF" opacity="0.6"/>
+          <polygon points="48,20 55,28 41,28" fill="#6BCB77"/>
+          <line x1="35" y1="28" x2="41" y2="28" stroke="#6BCB77" stroke-width="2"/>
+        </svg>
+      </div>
+      <span class="text">Menggerakkan objek</span>
+    </div>
+    <div class="effect-item">
+      <div class="effect-svg">
+        <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="25" r="12" fill="#FF6B6B"/>
+          <circle cx="16" cy="22" r="2" fill="#fff"/>
+          <circle cx="24" cy="22" r="2" fill="#fff"/>
+          <path d="M17 28 Q20 31 23 28" stroke="#fff" stroke-width="1.5" fill="none"/>
+          <rect x="12" y="37" width="16" height="12" rx="3" fill="#FF6B6B" opacity="0.6"/>
+          <line x1="38" y1="10" x2="55" y2="10" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+          <line x1="55" y1="10" x2="48" y2="15" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+          <line x1="55" y1="10" x2="48" y2="5" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="text">Memberhentikan objek</span>
+    </div>
+    <div class="effect-item">
+      <div class="effect-svg">
+        <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="25" r="12" fill="#F368E0"/>
+          <circle cx="16" cy="22" r="2" fill="#fff"/>
+          <circle cx="24" cy="22" r="2" fill="#fff"/>
+          <path d="M17 28 Q20 31 23 28" stroke="#fff" stroke-width="1.5" fill="none"/>
+          <rect x="12" y="37" width="16" height="12" rx="3" fill="#F368E0" opacity="0.6"/>
+          <path d="M45 15 Q55 25 45 35" stroke="#F368E0" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <polygon points="42,32 45,38 48,32" fill="#F368E0"/>
+        </svg>
+      </div>
+      <span class="text">Mengubah arah objek</span>
+    </div>
+    <div class="effect-item">
+      <div class="effect-svg">
+        <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="25" r="12" fill="#54A0FF"/>
+          <circle cx="16" cy="22" r="2" fill="#fff"/>
+          <circle cx="24" cy="22" r="2" fill="#fff"/>
+          <path d="M17 28 Q20 31 23 28" stroke="#fff" stroke-width="1.5" fill="none"/>
+          <rect x="12" y="37" width="16" height="12" rx="3" fill="#54A0FF" opacity="0.6"/>
+          <rect x="40" y="15" width="20" height="25" rx="4" fill="#5F27CD"/>
+          <rect x="40" y="15" width="20" height="10" rx="4" fill="#341f97" opacity="0.3"/>
+          <path d="M40 22 L48 18 L55 22 L60 18" stroke="#fff" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+      <span class="text">Mengubah bentuk objek</span>
+    </div>
+    <div class="effect-item">
+      <div class="effect-svg">
+        <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="25" r="12" fill="#6BCB77"/>
+          <circle cx="16" cy="22" r="2" fill="#fff"/>
+          <circle cx="24" cy="22" r="2" fill="#fff"/>
+          <path d="M17 28 Q20 31 23 28" stroke="#fff" stroke-width="1.5" fill="none"/>
+          <rect x="12" y="37" width="16" height="12" rx="3" fill="#6BCB77" opacity="0.6"/>
+          <text x="48" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#6BCB77">⚡</text>
+        </svg>
+      </div>
+      <span class="text">Mengubah kelajuan</span>
+    </div>
   </div>
 </div>
 
-<!-- ============ AKTIVITI INTERAKTIF ============ -->
+<!-- ==================== AKTIVITI ==================== -->
 <div id="aktiviti" class="section">
   <h2>🧩 Aktiviti Interaktif</h2>
-  <p style="color:#666;">Seret dan lepaskan jenis daya yang sesuai ke dalam kotak di bawah!</p>
+
+  <div class="activity-illu" style="text-align:center;">
+    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="200" height="100" rx="15" fill="#f8f9ff"/>
+      <!-- Child thinking -->
+      <g transform="translate(20,20)">
+        <circle cx="20" cy="18" r="16" fill="#FFD93D"/>
+        <circle cx="15" cy="16" r="2.5" fill="#333"/>
+        <circle cx="25" cy="16" r="2.5" fill="#333"/>
+        <path d="M16 26 Q20 31 24 26" stroke="#333" stroke-width="2" fill="none"/>
+        <rect x="8" y="34" width="24" height="28" rx="4" fill="#FF9FF3"/>
+        <line x1="8" y1="62" x2="4" y2="80" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="32" y1="62" x2="36" y2="80" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <!-- Question bubble -->
+      <circle cx="80" cy="15" r="12" fill="#667eea" opacity="0.8"/>
+      <text x="80" y="20" text-anchor="middle" font-size="16" fill="white" font-weight="bold">?</text>
+      <!-- Arrow items -->
+      <line x1="70" y1="60" x2="120" y2="60" stroke="#667eea" stroke-width="3" stroke-linecap="round" stroke-dasharray="6,4"/>
+      <polygon points="120,60 112,54 112,66" fill="#667eea"/>
+      <!-- Target -->
+      <rect x="125" y="30" width="55" height="55" rx="8" fill="#667eea"/>
+      <circle cx="152" cy="57" r="12" fill="rgba(255,255,255,0.3)"/>
+      <circle cx="152" cy="57" r="6" fill="rgba(255,255,255,0.5)"/>
+      <circle cx="152" cy="57" r="2" fill="white"/>
+    </svg>
+  </div>
+
+  <p style="color:#666;">Seret dan lepaskan jenis daya yang sesuai ke dalam petak di bawah!</p>
 
   <div class="activity-area">
     <h3>🧪 Padankan: Apakah Daya Ini?</h3>
@@ -487,7 +741,7 @@
     </div>
 
     <p style="margin:15px 0 8px;font-weight:600;color:#4a4a8a;">Petak Jawapan:</p>
-    <div class="drop-zones">
+    <div class="drop-zones" id="dropZones">
       <div class="drop-zone" data-correct="tolakan" data-filled="">Menolak kereta sorong</div>
       <div class="drop-zone" data-correct="tarikan" data-filled="">Mengangkat buku</div>
       <div class="drop-zone" data-correct="geseran" data-filled="">Brek basikal</div>
@@ -501,20 +755,55 @@
     <div class="activity-result" id="activityResult"></div>
   </div>
 
-  <div class="video-placeholder">
-    <div class="icon">🎬</div>
-    <p>💡 <strong>Cadangan:</strong> Cari video di YouTube — <em>"Daya Sains Tahun 6"</em> atau <em>"Force and Motion for Kids"</em> untuk tontonan kelas.</p>
+  <div style="text-align:center;margin-top:20px;">
+    <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="300" height="80" rx="15" fill="#1a1a2e"/>
+      <!-- TV icon -->
+      <rect x="20" y="15" width="50" height="35" rx="5" fill="#333"/>
+      <rect x="23" y="18" width="44" height="29" rx="3" fill="#6BCB77"/>
+      <text x="45" y="38" text-anchor="middle" font-size="14" fill="white">▶</text>
+      <rect x="38" y="50" width="14" height="5" rx="2" fill="#555"/>
+      <!-- Legs -->
+      <rect x="25" y="55" width="4" height="12" rx="2" fill="#555"/>
+      <rect x="61" y="55" width="4" height="12" rx="2" fill="#555"/>
+      <!-- Text -->
+      <text x="150" y="30" text-anchor="middle" font-size="10" fill="#aaa">💡 Cadangan:</text>
+      <text x="150" y="45" text-anchor="middle" font-size="9" fill="#888">Cari video YouTube "Daya Sains Tahun 6"</text>
+      <text x="150" y="58" text-anchor="middle" font-size="9" fill="#888">untuk tontonan kelas!</text>
+      <!-- Play button -->
+      <circle cx="260" cy="35" r="15" fill="#FF6B6B"/>
+      <polygon points="267,30 267,40 275,35" fill="white"/>
+    </svg>
   </div>
 </div>
 
-<!-- ============ KUIZ ============ -->
+<!-- ==================== KUIZ ==================== -->
 <div id="kuiz" class="section">
   <h2>🏆 Kuiz Daya</h2>
-  <p style="color:#666;margin-bottom:16px;">Jawab 10 soalan di bawah. Setiap soalan ada SATU jawapan betul.</p>
 
-  <div class="quiz-container" id="quizContainer">
-    <!-- Soalan akan dijana oleh JavaScript -->
+  <div style="text-align:center;margin-bottom:15px;">
+    <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="300" height="100" rx="15" fill="#f8f9ff"/>
+      <!-- Trophy -->
+      <path d="M130 25 L140 20 L150 25 L148 30 L140 28 L132 30 Z" fill="#FFD700"/>
+      <rect x="138" y="28" width="4" height="15" fill="#FFD700"/>
+      <path d="M122 35 L158 35 L154 50 L146 50 L144 42 L140 50 L126 50 Z" fill="#FFC107" opacity="0.6"/>
+      <ellipse cx="140" cy="50" rx="5" ry="3" fill="#FFA000"/>
+      <!-- Stars -->
+      <text x="80" y="35" font-size="20" fill="#FFD700">⭐</text>
+      <text x="220" y="35" font-size="20" fill="#FFD700">⭐</text>
+      <text x="60" y="55" font-size="16" fill="#FFD700">⭐</text>
+      <text x="240" y="55" font-size="16" fill="#FFD700">⭐</text>
+      <!-- Medal -->
+      <circle cx="270" cy="65" r="12" fill="#FFD700"/>
+      <circle cx="270" cy="65" r="8" fill="#FFC107"/>
+      <text x="270" y="69" text-anchor="middle" font-size="12" fill="#7B4B3A" font-weight="bold">1</text>
+    </svg>
   </div>
+
+  <p style="color:#666;margin-bottom:16px;">Jawab 10 soalan di bawah. Setiap soalan ada SATU jawapan betul. Selamat mencuba! 🍀</p>
+
+  <div class="quiz-container" id="quizContainer"></div>
 
   <div style="text-align:center;margin-top:15px;">
     <button class="quiz-check-btn" onclick="checkQuiz()">✅ Semak Kuiz</button>
@@ -525,12 +814,48 @@
     <div class="score-number" id="scoreNumber">0</div>
     <div class="score-label">/ 10 betul</div>
     <div class="score-msg" id="scoreMsg">Syabas!</div>
+    <div style="margin-top:12px;">
+      <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="14" fill="#FFD93D"/>
+        <circle cx="15" cy="17" r="2" fill="#333"/>
+        <circle cx="25" cy="17" r="2" fill="#333"/>
+        <path d="M16 25 Q20 30 24 25" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <rect x="10" y="34" width="20" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
+        <text x="60" y="28" text-anchor="middle" font-size="14" fill="white" font-weight="bold">🎉 TAHNIAH!</text>
+      </svg>
+    </div>
   </div>
 </div>
 
-<!-- ============ NOTA GURU ============ -->
+<!-- ==================== NOTA GURU ==================== -->
 <div id="guru" class="section">
   <h2>👩‍🏫 Nota untuk Guru</h2>
+
+  <div style="text-align:center;margin-bottom:15px;">
+    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="200" height="100" rx="15" fill="#fff8e1"/>
+      <!-- Teacher -->
+      <g transform="translate(30,15)">
+        <circle cx="25" cy="18" r="16" fill="#FFD93D"/>
+        <circle cx="20" cy="16" r="2.5" fill="#333"/>
+        <circle cx="30" cy="16" r="2.5" fill="#333"/>
+        <path d="M21 26 Q25 30 29 26" stroke="#333" stroke-width="2" fill="none"/>
+        <!-- Glasses -->
+        <circle cx="20" cy="16" r="3" fill="none" stroke="#555" stroke-width="1.5"/>
+        <circle cx="30" cy="16" r="3" fill="none" stroke="#555" stroke-width="1.5"/>
+        <line x1="23" y1="16" x2="27" y2="16" stroke="#555" stroke-width="1.5"/>
+        <rect x="13" y="34" width="24" height="28" rx="4" fill="#54A0FF"/>
+        <line x1="13" y1="62" x2="9" y2="80" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="37" y1="62" x2="41" y2="80" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <!-- Board -->
+      <rect x="85" y="18" width="100" height="65" rx="5" fill="#5F27CD"/>
+      <rect x="88" y="21" width="94" height="59" rx="3" fill="#341f97"/>
+      <text x="135" y="45" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Selamat</text>
+      <text x="135" y="58" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Mengajar!</text>
+      <text x="135" y="71" text-anchor="middle" font-size="10" fill="#aaa">Cikgu Nadirah</text>
+    </svg>
+  </div>
 
   <div class="teacher-note">
     <h3>📋 Cara Menggunakan Laman Ini</h3>
@@ -546,8 +871,8 @@
     <h3>💡 Cara Host Laman Ini (Pilihan)</h3>
     <ul>
       <li><strong>📂 Buka terus dari komputer</strong> — Download fail HTML, klik dua kali buka di browser. TIADA internet diperlukan selepas dimuatkan.</li>
-      <li><strong>🌐 Google Sites</strong> — Boleh embed sebagai HTML dalam Google Sites (gunakan widget Embed).</li>
-      <li><strong>🐙 GitHub Pages (PERCUMA)</strong> — Host percuma. Cuma upload ke GitHub, laman siap dalam minit.</li>
+      <li><strong>🌐 Google Sites</strong> — Boleh embed sebagai HTML dalam Google Sites (guna widget Embed).</li>
+      <li><strong>🌍 Link Hosting</strong> — Guna link yang Cikgu dah ada sekarang. Boleh share dengan murid melalui WhatsApp atau Google Classroom.</li>
       <li><strong>📱 Google Drive</strong> — Upload ke Drive dan buka dengan preview.</li>
     </ul>
   </div>
@@ -562,13 +887,33 @@
     </ul>
   </div>
 
-  <p style="text-align:center;color:#888;margin-top:20px;">📅 Dibina untuk Sains Tahun 6 | Topik: Daya</p>
+  <p style="text-align:center;color:#888;margin-top:20px;">📅 Sains Tahun 6 | Topik: Daya</p>
 </div>
 
 </div>
 
+<!-- ==================== FOOTER ==================== -->
 <div class="footer">
-  Dibina khas untuk Cikgu 🤍 | Sains Tahun 6 - Topik Daya
+  <div class="footer-svg">
+    <svg viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="180" height="60" rx="12" fill="rgba(255,255,255,0.1)"/>
+      <!-- Cute characters -->
+      <g transform="translate(10,15)">
+        <circle cx="10" cy="10" r="8" fill="#FFD93D" opacity="0.8"/>
+        <circle cx="7" cy="8" r="1.5" fill="#333"/>
+        <circle cx="13" cy="8" r="1.5" fill="#333"/>
+        <path d="M8 14 Q10 17 12 14" stroke="#333" stroke-width="1.5" fill="none"/>
+      </g>
+      <text x="50" y="28" font-size="9" fill="rgba(255,255,255,0.7)">Dibangunkan oleh</text>
+      <text x="50" y="45" font-size="14" fill="white" font-weight="bold">Cikgu Nadirah</text>
+      <text x="50" y="55" font-size="9" fill="rgba(255,255,255,0.6)">© 2026</text>
+      <!-- Star right -->
+      <text x="155" y="25" font-size="14" fill="#FFD700" opacity="0.8">⭐</text>
+      <text x="160" y="45" font-size="10" fill="#FFD700" opacity="0.6">✨</text>
+    </svg>
+  </div>
+  <div class="footer-divider"></div>
+  <p>Sains Tahun 6 — Topik Daya &amp; Gerakan</p>
 </div>
 
 <script>
@@ -577,7 +922,7 @@ function showSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  event.target.classList.add('active');
+  if (event && event.target) event.target.classList.add('active');
 }
 
 // ===================== DRAG & DROP =====================
@@ -593,7 +938,6 @@ dragItems.forEach(item => {
   item.addEventListener('dragend', function() {
     this.style.opacity = '1';
   });
-  // Touch support
   item.addEventListener('touchstart', function(e) {
     draggedItem = this;
     this.style.opacity = '0.4';
@@ -602,20 +946,13 @@ dragItems.forEach(item => {
     this.style.opacity = '1';
     const touch = e.changedTouches[0];
     const target = document.elementFromPoint(touch.clientX, touch.clientY);
-    if (target && target.classList.contains('drop-zone')) {
-      handleDrop(target);
-    }
+    if (target && target.classList.contains('drop-zone')) handleDrop(target);
   });
 });
 
 dropZones.forEach(zone => {
-  zone.addEventListener('dragover', function(e) {
-    e.preventDefault();
-    this.classList.add('drag-over');
-  });
-  zone.addEventListener('dragleave', function() {
-    this.classList.remove('drag-over');
-  });
+  zone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('drag-over'); });
+  zone.addEventListener('dragleave', function() { this.classList.remove('drag-over'); });
   zone.addEventListener('drop', function(e) {
     e.preventDefault();
     this.classList.remove('drag-over');
@@ -638,14 +975,8 @@ function checkActivity() {
   let total = 0;
   dropZones.forEach(zone => {
     total++;
-    if (zone.dataset.filled === zone.dataset.correct) {
-      correct++;
-      zone.style.borderColor = '#43e97b';
-      zone.style.background = '#d4edda';
-    } else if (zone.dataset.filled) {
-      zone.style.borderColor = '#f5576c';
-      zone.style.background = '#f8d7da';
-    }
+    if (zone.dataset.filled === zone.dataset.correct) { correct++; zone.style.borderColor = '#43e97b'; zone.style.background = '#d4edda'; }
+    else if (zone.dataset.filled) { zone.style.borderColor = '#f5576c'; zone.style.background = '#f8d7da'; }
   });
   result.classList.add('show');
   if (correct === total) {
@@ -658,14 +989,12 @@ function checkActivity() {
 }
 
 function resetActivity() {
-  dropZones.forEach(zone => {
-    zone.textContent = zone.dataset.correct === 'tolakan' ? 'Menolak kereta sorong' :
-                       zone.dataset.correct === 'tarikan' ? 'Mengangkat buku' :
-                       zone.dataset.correct === 'geseran' ? 'Brek basikal' : 'Epal jatuh ke tanah';
+  const labels = ['Menolak kereta sorong','Mengangkat buku','Brek basikal','Epal jatuh ke tanah'];
+  dropZones.forEach((zone,i) => {
+    zone.textContent = labels[i];
     zone.dataset.filled = '';
     zone.classList.remove('filled');
-    zone.style.borderColor = '';
-    zone.style.background = '';
+    zone.style.borderColor = ''; zone.style.background = '';
   });
   dragItems.forEach(item => item.style.display = '');
   document.getElementById('activityResult').classList.remove('show');
@@ -722,31 +1051,22 @@ function checkQuiz() {
     });
     if (selected && parseInt(selected.dataset.opt) === item.correct) correct++;
   });
-
   const scoreDiv = document.getElementById('quizScore');
   document.getElementById('scoreNumber').textContent = correct;
-  const msgs = [
-    '😅 Jangan putus asa! Cuba lagi! 💪',
-    '📚 Cuba lagi, kamu pasti boleh!',
-    '👍 Teruskan usaha!',
-    '👏 Bagus! Teruskan!',
-    '🌟 Hebat! Hampir cemerlang!',
-    '🎉 CEMERLANG! Tahniah! ⭐'
-  ];
-  document.getElementById('scoreMsg').textContent = msgs[Math.min(correct, 5)];
+  const msgs = ['😅 Jangan putus asa! Cuba lagi! 💪','📚 Cuba lagi, kamu pasti boleh!','👍 Teruskan usaha!','👏 Bagus! Teruskan!','🌟 Hebat! Hampir cemerlang!','🎉 CEMERLANG! Tahniah! ⭐'];
+  document.getElementById('scoreMsg').textContent = msgs[Math.min(correct,5)];
   scoreDiv.classList.add('show');
 }
 
 function resetQuiz() {
   quizAnswered = false;
   document.querySelectorAll('.quiz-option').forEach(o => {
-    o.classList.remove('selected', 'correct', 'wrong');
+    o.classList.remove('selected','correct','wrong');
     o.style.pointerEvents = '';
   });
   document.getElementById('quizScore').classList.remove('show');
 }
 
-// Init
 renderQuiz();
 </script>
 </body>
