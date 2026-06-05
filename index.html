@@ -2,450 +2,215 @@
 <html lang="ms">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daya &amp; Kuiz - Sains Tahun 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Daya & Kuiz - Sains Tahun 6</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    color: #333;
-    line-height: 1.7;
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  min-height:100vh;color:#333;line-height:1.7
+}
 
-  /* ============ HERO ============ */
-  .hero {
-    position: relative;
-    overflow: hidden;
-    color: white;
-    text-align: center;
-  }
-  .hero-img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.6);
-  }
-  .hero-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(240,147,251,0.3), rgba(245,87,108,0.3), rgba(79,172,254,0.3));
-  }
-  .hero h1 {
-    font-size: 3em;
-    text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
-  }
-  .hero p {
-    font-size: 1.3em;
-    opacity: 0.95;
-    margin-top: 8px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-  }
+/* ===== HERO ===== */
+.hero{position:relative;overflow:hidden;color:#fff;text-align:center}
+.hero-img{width:100%;height:360px;object-fit:cover;display:block;filter:brightness(0.55)}
+.hero-overlay{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;
+  background:linear-gradient(135deg,rgba(240,147,251,.25),rgba(245,87,108,.25),rgba(79,172,254,.25))
+}
+.hero h1{font-size:3em;text-shadow:3px 3px 8px rgba(0,0,0,.5)}
+.hero p{font-size:1.3em;opacity:.95;margin-top:8px;text-shadow:2px 2px 4px rgba(0,0,0,.4)}
 
-  /* ============ NAV ============ */
-  .nav-bar {
-    background: white;
-    padding: 12px 20px;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .nav-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    background: #f0f0f0;
-    color: #555;
-    cursor: pointer;
-    font-size: 0.95em;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  .nav-btn:hover, .nav-btn.active {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102,126,234,0.4);
-  }
+/* ===== NAV ===== */
+.nav-bar{
+  background:#fff;padding:12px 20px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:100
+}
+.nav-btn{
+  padding:10px 20px;border:none;border-radius:25px;background:#f0f0f0;color:#555;
+  cursor:pointer;font-size:.95em;font-weight:600;transition:all .3s
+}
+.nav-btn:hover,.nav-btn.active{
+  background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;
+  transform:translateY(-2px);box-shadow:0 4px 12px rgba(102,126,234,.4)
+}
 
-  /* ============ MAIN ============ */
-  .container { max-width: 920px; margin: 0 auto; padding: 20px; }
+/* ===== SECTIONS ===== */
+.container{max-width:940px;margin:0 auto;padding:20px}
+.section{
+  display:none;background:#fff;border-radius:20px;padding:30px;margin:20px 0;
+  box-shadow:0 10px 40px rgba(0,0,0,.1);animation:fadeSlide .4s ease
+}
+.section.active{display:block}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.section h2{font-size:1.8em;color:#4a4a8a;margin-bottom:20px;border-left:5px solid #667eea;padding-left:15px}
+.section h3{font-size:1.3em;color:#555;margin:20px 0 10px}
 
-  .section {
-    display: none;
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    margin: 20px 0;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    animation: fadeSlide 0.5s ease;
-  }
-  .section.active { display: block; }
+/* ===== IMAGES ===== */
+.section-img{width:100%;max-height:220px;object-fit:cover;border-radius:14px;margin-bottom:20px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+.inline-img{width:100%;border-radius:14px;margin:15px 0;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+.card-img-wrap{width:100%;height:120px;overflow:hidden;position:relative}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.force-card:hover .card-img-wrap img{transform:scale(1.08)}
+.effect-img{width:100%;height:100px;object-fit:cover;display:block}
 
-  @keyframes fadeSlide {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+/* ===== FORCE CARDS ===== */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin:20px 0}
+.force-card{
+  border-radius:16px;overflow:hidden;text-align:center;color:#fff;
+  cursor:pointer;transition:all .3s;box-shadow:0 4px 15px rgba(0,0,0,.1);
+  -webkit-tap-highlight-color:transparent;user-select:none
+}
+.force-card:active{transform:scale(.97)}
+.force-card:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.force-card .info{padding:10px 10px 14px}
+.force-card .info .title{font-size:1.1em;font-weight:700}
+.force-card .info .desc{font-size:.8em;margin-top:4px;opacity:.9}
+.card-c:nth-child(1) .card-img-wrap{border-bottom:3px solid #f5576c}
+.card-c:nth-child(2) .card-img-wrap{border-bottom:3px solid #4facfe}
+.card-c:nth-child(3) .card-img-wrap{border-bottom:3px solid #43e97b}
+.card-c:nth-child(4) .card-img-wrap{border-bottom:3px solid #fa709a}
+.card-c:nth-child(5) .card-img-wrap{border-bottom:3px solid #a18cd1}
+.card-c:nth-child(1) .info{background:linear-gradient(135deg,#f093fb,#f5576c)}
+.card-c:nth-child(2) .info{background:linear-gradient(135deg,#4facfe,#00f2fe)}
+.card-c:nth-child(3) .info{background:linear-gradient(135deg,#43e97b,#38f9d7)}
+.card-c:nth-child(4) .info{background:linear-gradient(135deg,#fa709a,#fee140)}
+.card-c:nth-child(5) .info{background:linear-gradient(135deg,#a18cd1,#fbc2eb)}
 
-  .section h2 {
-    font-size: 1.8em;
-    color: #4a4a8a;
-    margin-bottom: 20px;
-    border-left: 5px solid #667eea;
-    padding-left: 15px;
-  }
-  .section h3 {
-    font-size: 1.3em;
-    color: #555;
-    margin: 20px 0 10px;
-  }
+/* ===== EFFECTS ===== */
+.effect-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:15px 0}
+.effect-item{
+  background:#f8f9ff;border-radius:12px;overflow:hidden;border:2px solid #e8e8ff;transition:all .3s;text-align:center
+}
+.effect-item:hover{border-color:#667eea;transform:scale(1.03)}
+.effect-item .text{font-weight:600;color:#555;padding:8px}
 
-  /* ============ IMAGE STYLES ============ */
-  .section-img {
-    width: 100%;
-    max-height: 220px;
-    object-fit: cover;
-    border-radius: 14px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  }
-  .card-img-wrap {
-    width: 100%;
-    height: 120px;
-    overflow: hidden;
-    border-radius: 12px;
-    margin-bottom: 10px;
-  }
-  .card-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .inline-img {
-    width: 100%;
-    border-radius: 14px;
-    margin: 15px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  }
+/* ===== ACTIVITY ===== */
+.activity-area{background:#f8f9ff;border-radius:16px;padding:25px;margin:20px 0;text-align:center;border:3px dashed #667eea}
+.activity-area h3{color:#4a4a8a;margin-top:0}
+.drag-items{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:15px 0}
+.drag-item{
+  padding:12px 24px;background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;border-radius:12px;cursor:grab;font-weight:600;transition:all .2s;
+  user-select:none;-webkit-user-select:none;touch-action:none
+}
+.drag-item:active{cursor:grabbing;transform:scale(.95);opacity:.6}
+.drag-item.dragging{opacity:.4}
+.drop-zones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:15px 0}
+.drop-zone{
+  min-width:130px;padding:20px 15px;background:#fff;border:3px dashed #ccc;
+  border-radius:12px;text-align:center;transition:all .3s;font-weight:600;color:#999
+}
+.drop-zone.drag-over{border-color:#667eea;background:#eef0ff}
+.drop-zone.filled{border-style:solid;border-color:#43e97b;background:#e8fce8;color:#333}
+.activity-result{margin-top:15px;padding:15px;border-radius:12px;font-weight:600;display:none}
+.activity-result.show{display:block}
+.activity-result.ok{background:#d4edda;color:#155724}
+.activity-result.fail{background:#f8d7da;color:#721c24}
+.btn{
+  padding:12px 30px;border:none;border-radius:25px;font-size:1em;font-weight:700;
+  cursor:pointer;transition:all .3s;margin:5px
+}
+.btn-primary{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(102,126,234,.5)}
+.btn-secondary{background:#f0f0f0;color:#666}
+.btn-secondary:hover{background:#e0e0e0}
 
-  /* ============ CARDS ============ */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 16px;
-    margin: 20px 0;
-  }
-  .force-card {
-    border-radius: 16px;
-    padding: 0 0 14px 0;
-    text-align: center;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow: hidden;
-  }
-  .force-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  }
-  .force-card .title { font-size: 1.1em; font-weight: 700; padding: 0 8px; }
-  .force-card .desc { font-size: 0.8em; padding: 4px 8px 0; opacity: 0.9; }
-  .force-card:nth-child(1) .card-img-wrap { border-bottom: 3px solid #f5576c; }
-  .force-card:nth-child(2) .card-img-wrap { border-bottom: 3px solid #4facfe; }
-  .force-card:nth-child(3) .card-img-wrap { border-bottom: 3px solid #43e97b; }
-  .force-card:nth-child(4) .card-img-wrap { border-bottom: 3px solid #fa709a; }
-  .force-card:nth-child(5) .card-img-wrap { border-bottom: 3px solid #a18cd1; }
+/* ===== QUIZ ===== */
+.quiz-container{margin:20px 0}
+.quiz-q{
+  background:#f8f9ff;border-radius:16px;padding:20px;margin-bottom:20px;border:2px solid #e8e8ff
+}
+.quiz-q .q-text{font-size:1.1em;font-weight:700;color:#333;margin-bottom:12px}
+.quiz-q .q-text .num{
+  display:inline-block;background:#667eea;color:#fff;width:30px;height:30px;
+  border-radius:50%;text-align:center;line-height:30px;font-size:.85em;margin-right:8px
+}
+.quiz-opts{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{
+  padding:12px 16px;background:#fff;border:2px solid #e0e0e0;
+  border-radius:12px;cursor:pointer;transition:all .3s;font-size:.95em
+}
+.quiz-opt:hover{border-color:#667eea;background:#f0f2ff}
+.quiz-opt.sel{border-color:#667eea;background:#eef0ff}
+.quiz-opt.correct{border-color:#43e97b;background:#d4edda}
+.quiz-opt.wrong{border-color:#f5576c;background:#f8d7da}
+.quiz-score{
+  text-align:center;padding:25px;background:linear-gradient(135deg,#667eea,#764ba2);
+  border-radius:16px;color:#fff;margin-top:20px;display:none
+}
+.quiz-score.show{display:block}
+.quiz-score .num{font-size:3em;font-weight:800}
+.quiz-score .lbl{font-size:1.2em;opacity:.9}
+.quiz-score .msg{margin-top:8px;font-size:1.1em}
+.quiz-btn{padding:14px 35px;border:none;border-radius:25px;font-size:1.1em;font-weight:700;cursor:pointer;transition:all .3s;margin:5px}
+.quiz-btn.check{background:linear-gradient(135deg,#43e97b,#38f9d7);color:#fff}
+.quiz-btn.check:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(67,233,123,.5)}
+.quiz-btn.reset{background:#f0f0f0;color:#666}
+.quiz-btn.reset:hover{background:#e0e0e0}
 
-  /* ============ EFFECTS ============ */
-  .effect-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-    margin: 15px 0;
-  }
-  .effect-item {
-    background: #f8f9ff;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 2px solid #e8e8ff;
-    transition: all 0.3s;
-    text-align: center;
-  }
-  .effect-item:hover { border-color: #667eea; transform: scale(1.03); }
-  .effect-item img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    display: block;
-  }
-  .effect-item .text { font-weight: 600; color: #555; padding: 8px; }
+/* ===== TEACHER NOTES ===== */
+.tnote{border-radius:12px;padding:16px;margin:20px 0}
+.tnote h3{color:inherit;margin-top:0;font-size:1.1em}
+.tnote ul{margin-left:20px}
+.tnote li{margin:5px 0}
+.tnote.yellow{background:#fff3cd;border:2px solid #ffc107;color:#856404}
+.tnote.green{background:#d4edda;border:2px solid #28a745;color:#155724}
+.tnote.blue{background:#e8f4f8;border:2px solid #17a2b8;color:#0c5460}
 
-  /* ============ ACTIVITY ============ */
-  .activity-area {
-    background: #f8f9ff;
-    border-radius: 16px;
-    padding: 25px;
-    margin: 20px 0;
-    text-align: center;
-    border: 3px dashed #667eea;
-  }
-  .activity-area h3 { color: #4a4a8a; margin-top: 0; }
+/* ===== INFO BOXES ===== */
+.ibox{border-radius:14px;padding:20px;margin-bottom:20px}
+.ibox ul{margin:10px 0 0 25px}
+.ibox.blue{background:#e8f4f8}
+.ibox.orange{background:#fff0e6}
+.ibox.purple{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
 
-  .drag-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin: 15px 0;
-  }
-  .drag-item {
-    padding: 12px 24px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border-radius: 12px;
-    cursor: grab;
-    font-weight: 600;
-    transition: all 0.2s;
-    user-select: none;
-    touch-action: none;
-  }
-  .drag-item:active { cursor: grabbing; transform: scale(0.95); }
+/* ===== FOOTER ===== */
+.footer{text-align:center;padding:30px 20px;color:rgba(255,255,255,.85);font-size:.95em}
+.footer .div{width:60px;height:3px;background:rgba(255,255,255,.3);margin:12px auto;border-radius:3px}
 
-  .drop-zones {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin: 15px 0;
-  }
-  .drop-zone {
-    min-width: 130px;
-    padding: 20px 15px;
-    background: white;
-    border: 3px dashed #ccc;
-    border-radius: 12px;
-    text-align: center;
-    transition: all 0.3s;
-    font-weight: 600;
-    color: #999;
-  }
-  .drop-zone.drag-over { border-color: #667eea; background: #eef0ff; }
-  .drop-zone.filled { border-style: solid; border-color: #43e97b; background: #e8fce8; color: #333; }
-
-  .activity-result {
-    margin-top: 15px;
-    padding: 15px;
-    border-radius: 12px;
-    font-weight: 600;
-    display: none;
-  }
-  .activity-result.show { display: block; }
-  .activity-result.correct { background: #d4edda; color: #155724; }
-  .activity-result.wrong { background: #f8d7da; color: #721c24; }
-
-  button.check-btn, button.reset-btn {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1em;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin: 5px;
-  }
-  button.check-btn {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-  }
-  button.check-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(102,126,234,0.5); }
-  button.reset-btn { background: #f0f0f0; color: #666; }
-  button.reset-btn:hover { background: #e0e0e0; }
-
-  /* ============ QUIZ ============ */
-  .quiz-container { margin: 20px 0; }
-
-  .quiz-question {
-    background: #f8f9ff;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 2px solid #e8e8ff;
-  }
-  .quiz-question .q-text {
-    font-size: 1.1em;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 12px;
-  }
-  .quiz-question .q-text .num {
-    display: inline-block;
-    background: #667eea;
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 30px;
-    font-size: 0.85em;
-    margin-right: 8px;
-  }
-
-  .quiz-options { display: flex; flex-direction: column; gap: 8px; }
-  .quiz-option {
-    padding: 12px 16px;
-    background: white;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 0.95em;
-  }
-  .quiz-option:hover { border-color: #667eea; background: #f0f2ff; }
-  .quiz-option.selected { border-color: #667eea; background: #eef0ff; }
-  .quiz-option.correct { border-color: #43e97b; background: #d4edda; }
-  .quiz-option.wrong { border-color: #f5576c; background: #f8d7da; }
-
-  .quiz-score {
-    text-align: center;
-    padding: 25px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 16px;
-    color: white;
-    margin-top: 20px;
-    display: none;
-  }
-  .quiz-score.show { display: block; }
-  .quiz-score .score-number { font-size: 3em; font-weight: 800; }
-  .quiz-score .score-label { font-size: 1.2em; opacity: 0.9; }
-  .quiz-score .score-msg { margin-top: 8px; font-size: 1.1em; }
-
-  button.quiz-check-btn, button.quiz-reset-btn {
-    padding: 14px 35px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.1em;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin: 5px;
-  }
-  button.quiz-check-btn {
-    background: linear-gradient(135deg, #43e97b, #38f9d7);
-    color: white;
-  }
-  button.quiz-check-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(67,233,123,0.5); }
-  button.quiz-reset-btn { background: #f0f0f0; color: #666; }
-  button.quiz-reset-btn:hover { background: #e0e0e0; }
-
-  /* ============ TEACHER NOTES ============ */
-  .teacher-note {
-    background: #fff3cd;
-    border: 2px solid #ffc107;
-    border-radius: 12px;
-    padding: 16px;
-    margin: 20px 0;
-  }
-  .teacher-note h3 { color: #856404; margin-top: 0; }
-  .teacher-note ul { margin-left: 20px; color: #856404; }
-  .teacher-note li { margin: 5px 0; }
-
-  .teacher-note.green { background: #d4edda; border-color: #28a745; }
-  .teacher-note.green ul { color: #155724; }
-  .teacher-note.green h3 { color: #155724; }
-  .teacher-note.blue { background: #e8f4f8; border-color: #17a2b8; }
-  .teacher-note.blue ul { color: #0c5460; }
-  .teacher-note.blue h3 { color: #0c5460; }
-
-  /* ============ FOOTER ============ */
-  .footer {
-    text-align: center;
-    padding: 30px 20px;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.95em;
-  }
-  .footer .footer-divider {
-    width: 60px; height: 3px; background: rgba(255,255,255,0.3);
-    margin: 12px auto; border-radius: 3px;
-  }
-
-  /* ============ INFO BOXES ============ */
-  .info-box {
-    border-radius: 14px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  .info-box ul { margin: 10px 0 0 25px; }
-
-  .info-blue { background: #e8f4f8; }
-  .info-orange { background: #fff0e6; }
-  .info-purple { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
-  .info-purple ul { color: white; }
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 1.8em; }
-    .hero-img { height: 220px; }
-    .section { padding: 20px; }
-    .card-grid { grid-template-columns: 1fr 1fr; }
-    .effect-list { grid-template-columns: 1fr 1fr; }
-    .nav-btn { padding: 8px 14px; font-size: 0.85em; }
-  }
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+  .hero h1{font-size:1.8em}.hero-img{height:220px}
+  .section{padding:20px}.card-grid{grid-template-columns:1fr 1fr}
+  .effect-list{grid-template-columns:1fr 1fr}.nav-btn{padding:8px 14px;font-size:.85em}
+}
 </style>
 </head>
 <body>
 
-<!-- ==================== HERO ==================== -->
 <div class="hero">
-  <img class="hero-img" src="images/hero-banner.jpg" alt="Kanak-kanak belajar sains">
+  <img class="hero-img" src="images/hero-banner.jpg" alt="Kanak-kanak belajar sains di makmal" loading="eager">
   <div class="hero-overlay">
     <h1>🌍 Daya &amp; Gerakan</h1>
     <p>Sains Tahun 6 | Sekolah Kebangsaan</p>
   </div>
 </div>
 
-<!-- ==================== NAV ==================== -->
-<nav class="nav-bar">
-  <button class="nav-btn active" onclick="showSection('pelajaran')">📖 Pelajaran</button>
-  <button class="nav-btn" onclick="showSection('jenis')">🔽 Jenis Daya</button>
-  <button class="nav-btn" onclick="showSection('aktiviti')">🧩 Aktiviti</button>
-  <button class="nav-btn" onclick="showSection('kuiz')">🏆 Kuiz</button>
-  <button class="nav-btn" onclick="showSection('guru')">👩‍🏫 Nota Guru</button>
+<nav class="nav-bar" id="navBar">
+  <button class="nav-btn active" data-section="pelajaran">📖 Pelajaran</button>
+  <button class="nav-btn" data-section="jenis">🔽 Jenis Daya</button>
+  <button class="nav-btn" data-section="aktiviti">🧩 Aktiviti</button>
+  <button class="nav-btn" data-section="kuiz">🏆 Kuiz</button>
+  <button class="nav-btn" data-section="guru">👩‍🏫 Nota Guru</button>
 </nav>
 
 <div class="container">
 
-<!-- ==================== PELAJARAN ==================== -->
-<div id="pelajaran" class="section active">
-
-  <img class="section-img" src="images/kids-learning.jpg" alt="Kanak-kanak belajar di sekolah">
-
+<!-- ===== PELAJARAN ===== -->
+<section id="sec-pelajaran" class="section active">
+  <img class="section-img" src="images/kids-learning.jpg" alt="Kanak-kanak gembira di sekolah" loading="lazy">
   <h2>📚 Apa Itu Daya?</h2>
 
-  <div class="info-box info-blue">
+  <div class="ibox blue">
     <p style="font-size:1.15em;font-weight:600;color:#2c3e50;">🔍 <em>Daya</em> ialah <strong>tarikan atau tolakan</strong> yang bertindak ke atas sesuatu objek.</p>
     <p style="margin-top:10px;">Daya boleh menyebabkan objek:</p>
-    <ul>
-      <li>✅ Bergerak</li>
-      <li>✅ Berhenti</li>
-      <li>✅ Berubah bentuk</li>
-      <li>✅ Berubah arah</li>
-    </ul>
+    <ul><li>✅ Bergerak</li><li>✅ Berhenti</li><li>✅ Berubah bentuk</li><li>✅ Berubah arah</li></ul>
   </div>
 
-  <div class="info-box info-orange">
+  <div class="ibox orange">
     <h3 style="margin-top:0;border:none;padding:0;">📌 Contoh dalam Kehidupan Harian</h3>
     <ul>
       <li><strong>Menolak kereta sorong</strong> — daya tolakan</li>
@@ -456,195 +221,135 @@
     </ul>
   </div>
 
-  <img class="inline-img" src="images/push-pull.jpg" alt="Kanak-kanak melakukan aktiviti tolakan dan tarikan">
+  <img class="inline-img" src="images/push-pull.jpg" alt="Kanak-kanak bermain tarik tali - contoh daya" loading="lazy">
 
-  <div class="info-box info-purple" style="text-align:center;">
+  <div class="ibox purple" style="text-align:center;">
     <p style="font-size:1.3em;font-weight:700;">⚡ Ingat! ⚡</p>
     <p style="font-size:1.1em;margin-top:8px;">Daya tidak boleh dilihat, tetapi <strong>kesannya boleh diperhatikan</strong>!</p>
   </div>
-</div>
+</section>
 
-<!-- ==================== JENIS DAYA ==================== -->
-<div id="jenis" class="section">
+<!-- ===== JENIS DAYA ===== -->
+<section id="sec-jenis" class="section">
+  <img class="section-img" src="images/science-lab.jpg" alt="Kanak-kanak melakukan eksperimen sains" loading="lazy">
   <h2>🔽 Jenis-Jenis Daya</h2>
-  <p style="color:#666;margin-bottom:16px;">Klik kad di bawah untuk belajar tentang setiap jenis daya:</p>
+  <p style="color:#666;margin-bottom:16px;">Tekan kad di bawah untuk penerangan ringkas:</p>
 
-  <div class="card-grid">
-    <div class="force-card" onclick="alert('💪 Daya TOLAKAN
-
-Daya yang menolak objek MENJAUHI kita.
-
-Contoh: 
-• Menolak meja
-• Meniup belon
-• Menekan butang')">
-      <div class="card-img-wrap"><img src="images/push-pull.jpg" alt="Tolakan"></div>
-      <div class="title">👉 Daya Tolakan</div>
-      <div class="desc">Menolak objek menjauhi kita</div>
+  <div class="card-grid" id="forceCards">
+    <div class="force-card card-c" data-force="tolakan">
+      <div class="card-img-wrap"><img src="images/push-pull.jpg" alt="Daya tolakan - tarik tali" loading="lazy"></div>
+      <div class="info"><div class="title">👉 Daya Tolakan</div><div class="desc">Menolak objek menjauhi kita</div></div>
     </div>
-    <div class="force-card" onclick="alert('🤲 Daya TARIKAN
-
-Daya yang menarik objek MENDEKATI kita.
-
-Contoh: 
-• Menarik tali
-• Membuka pintu
-• Mengangkat buku')">
-      <div class="card-img-wrap"><img src="images/happy-kids.jpg" alt="Tarikan"></div>
-      <div class="title">👈 Daya Tarikan</div>
-      <div class="desc">Menarik objek mendekati kita</div>
+    <div class="force-card card-c" data-force="tarikan">
+      <div class="card-img-wrap"><img src="images/happy-kids.jpg" alt="Daya tarikan" loading="lazy"></div>
+      <div class="info"><div class="title">👈 Daya Tarikan</div><div class="desc">Menarik objek mendekati kita</div></div>
     </div>
-    <div class="force-card" onclick="alert('🧲 Daya GESERAN
-
-Daya yang MELAWAN pergerakan. Semakin kasar permukaan, semakin besar daya geseran.
-
-Contoh: 
-• Brek basikal
-• Tapak kasut
-• Memadam pensel')">
-      <div class="card-img-wrap"><img src="images/kids-learning.jpg" alt="Geseran"></div>
-      <div class="title">🧲 Daya Geseran</div>
-      <div class="desc">Melawan pergerakan objek</div>
+    <div class="force-card card-c" data-force="geseran">
+      <div class="card-img-wrap"><img src="images/kids-learning.jpg" alt="Daya geseran" loading="lazy"></div>
+      <div class="info"><div class="title">🧲 Daya Geseran</div><div class="desc">Melawan pergerakan objek</div></div>
     </div>
-    <div class="force-card" onclick="alert('⬇️ Daya GRAVITI
-
-Daya tarikan BUMI yang menarik semua objek ke bawah.
-
-Contoh: 
-• Epal jatuh dari pokok
-• Air hujan turun
-• Bola jatuh ke lantai')">
-      <div class="card-img-wrap"><img src="images/gravity.jpg" alt="Graviti"></div>
-      <div class="title">⬇️ Daya Graviti</div>
-      <div class="desc">Tarikan bumi ke bawah</div>
+    <div class="force-card card-c" data-force="graviti">
+      <div class="card-img-wrap"><img src="images/gravity.jpg" alt="Daya graviti - epal jatuh" loading="lazy"></div>
+      <div class="info"><div class="title">⬇️ Daya Graviti</div><div class="desc">Tarikan bumi ke bawah</div></div>
     </div>
-    <div class="force-card" onclick="alert('🧲 Daya MAGNET
-
-Daya yang wujud pada MAGNET. Boleh menarik besi, keluli, nikel.
-
-Contoh: 
-• Magnet peti ais
-• Kompas
-• Mainan magnet')">
-      <div class="card-img-wrap"><img src="images/magnets.jpg" alt="Magnet"></div>
-      <div class="title">🧲 Daya Magnet</div>
-      <div class="desc">Daya pada magnet</div>
+    <div class="force-card card-c" data-force="magnet">
+      <div class="card-img-wrap"><img src="images/magnets.jpg" alt="Daya magnet" loading="lazy"></div>
+      <div class="info"><div class="title">🧲 Daya Magnet</div><div class="desc">Daya pada magnet</div></div>
     </div>
   </div>
 
   <h3 style="margin-top:25px;">🎯 Kesan Daya pada Objek</h3>
   <div class="effect-list">
-    <div class="effect-item">
-      <img src="images/happy-kids.jpg" alt="Menggerakkan objek">
-      <span class="text">🏃 Menggerakkan objek</span>
-    </div>
-    <div class="effect-item">
-      <img src="images/kids-learning.jpg" alt="Memberhentikan objek">
-      <span class="text">✋ Memberhentikan objek</span>
-    </div>
-    <div class="effect-item">
-      <img src="images/push-pull.jpg" alt="Mengubah arah">
-      <span class="text">🔄 Mengubah arah objek</span>
-    </div>
-    <div class="effect-item">
-      <img src="images/science-lab.jpg" alt="Mengubah bentuk">
-      <span class="text">🌀 Mengubah bentuk objek</span>
-    </div>
-    <div class="effect-item">
-      <img src="images/teacher.jpg" alt="Mengubah kelajuan">
-      <span class="text">⚡ Mengubah kelajuan</span>
-    </div>
+    <div class="effect-item"><img class="effect-img" src="images/happy-kids.jpg" alt="Bergerak" loading="lazy"><span class="text">🏃 Menggerakkan objek</span></div>
+    <div class="effect-item"><img class="effect-img" src="images/kids-learning.jpg" alt="Berhenti" loading="lazy"><span class="text">✋ Memberhentikan objek</span></div>
+    <div class="effect-item"><img class="effect-img" src="images/push-pull.jpg" alt="Ubah arah" loading="lazy"><span class="text">🔄 Mengubah arah objek</span></div>
+    <div class="effect-item"><img class="effect-img" src="images/science-lab.jpg" alt="Ubah bentuk" loading="lazy"><span class="text">🌀 Mengubah bentuk objek</span></div>
+    <div class="effect-item"><img class="effect-img" src="images/teacher.jpg" alt="Ubah kelajuan" loading="lazy"><span class="text">⚡ Mengubah kelajuan</span></div>
   </div>
-</div>
+</section>
 
-<!-- ==================== AKTIVITI ==================== -->
-<div id="aktiviti" class="section">
+<!-- ===== AKTIVITI ===== -->
+<section id="sec-aktiviti" class="section">
+  <img class="section-img" src="images/science-lab.jpg" alt="Kanak-kanak di makmal sains" loading="lazy">
   <h2>🧩 Aktiviti Interaktif</h2>
-
-  <img class="section-img" src="images/science-lab.jpg" alt="Kanak-kanak di makmal sains">
-
-  <p style="color:#666;">Seret dan lepaskan jenis daya yang sesuai ke dalam petak di bawah!</p>
+  <p style="color:#666;">Seret dan lepaskan jenis daya yang sesuai ke dalam petak jawapan:</p>
 
   <div class="activity-area">
     <h3>🧪 Padankan: Apakah Daya Ini?</h3>
     <p style="color:#888;margin-bottom:15px;">Seret kotak warna ke petak yang betul:</p>
 
     <div class="drag-items" id="dragItems">
-      <div class="drag-item" draggable="true" data-answer="tolakan" style="background:linear-gradient(135deg,#f093fb,#f5576c);">👉 Tolakan</div>
-      <div class="drag-item" draggable="true" data-answer="tarikan" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">👈 Tarikan</div>
-      <div class="drag-item" draggable="true" data-answer="geseran" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">🧲 Geseran</div>
-      <div class="drag-item" draggable="true" data-answer="graviti" style="background:linear-gradient(135deg,#fa709a,#fee140);">⬇️ Graviti</div>
+      <div class="drag-item" data-answer="tolakan" style="background:linear-gradient(135deg,#f093fb,#f5576c)">👉 Tolakan</div>
+      <div class="drag-item" data-answer="tarikan" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">👈 Tarikan</div>
+      <div class="drag-item" data-answer="geseran" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">🧲 Geseran</div>
+      <div class="drag-item" data-answer="graviti" style="background:linear-gradient(135deg,#fa709a,#fee140)">⬇️ Graviti</div>
     </div>
 
     <p style="margin:15px 0 8px;font-weight:600;color:#4a4a8a;">Petak Jawapan:</p>
     <div class="drop-zones" id="dropZones">
-      <div class="drop-zone" data-correct="tolakan" data-filled="">Menolak kereta sorong</div>
-      <div class="drop-zone" data-correct="tarikan" data-filled="">Mengangkat buku</div>
-      <div class="drop-zone" data-correct="geseran" data-filled="">Brek basikal</div>
-      <div class="drop-zone" data-correct="graviti" data-filled="">Epal jatuh ke tanah</div>
+      <div class="drop-zone" data-correct="tolakan">Menolak kereta sorong</div>
+      <div class="drop-zone" data-correct="tarikan">Mengangkat buku</div>
+      <div class="drop-zone" data-correct="geseran">Brek basikal</div>
+      <div class="drop-zone" data-correct="graviti">Epal jatuh ke tanah</div>
     </div>
 
     <div style="margin-top:15px;">
-      <button class="check-btn" onclick="checkActivity()">✅ Semak Jawapan</button>
-      <button class="reset-btn" onclick="resetActivity()">🔄 Reset</button>
+      <button class="btn btn-primary" onclick="checkActivity()">✅ Semak Jawapan</button>
+      <button class="btn btn-secondary" onclick="resetActivity()">🔄 Reset</button>
     </div>
     <div class="activity-result" id="activityResult"></div>
   </div>
 
-  <div style="text-align:center;background:#1a1a2e;border-radius:16px;padding:20px;margin:20px 0;color:white;">
-    <p style="font-size:1.1em;">💡 <strong>Cadangan:</strong> Cari video YouTube — <em>"Daya Sains Tahun 6"</em> untuk tontonan kelas!</p>
+  <div style="text-align:center;background:#1a1a2e;border-radius:16px;padding:20px;margin:20px 0;color:#fff;">
+    <p style="font-size:1.1em;">💡 <strong>Cadangan:</strong> Cari video YouTube — "Daya Sains Tahun 6" untuk tontonan kelas!</p>
   </div>
-</div>
+</section>
 
-<!-- ==================== KUIZ ==================== -->
-<div id="kuiz" class="section">
+<!-- ===== KUIZ ===== -->
+<section id="sec-kuiz" class="section">
+  <img class="section-img" src="images/happy-kids.jpg" alt="Kanak-kanak gembira" loading="lazy">
   <h2>🏆 Kuiz Daya</h2>
-
-  <img class="section-img" src="images/happy-kids.jpg" alt="Kanak-kanak gembira">
-
   <p style="color:#666;margin-bottom:16px;">Jawab 10 soalan di bawah. Setiap soalan ada SATU jawapan betul. Selamat mencuba! 🍀</p>
 
   <div class="quiz-container" id="quizContainer"></div>
 
   <div style="text-align:center;margin-top:15px;">
-    <button class="quiz-check-btn" onclick="checkQuiz()">✅ Semak Kuiz</button>
-    <button class="quiz-reset-btn" onclick="resetQuiz()">🔄 Cuba Lagi</button>
+    <button class="quiz-btn check" onclick="checkQuiz()">✅ Semak Kuiz</button>
+    <button class="quiz-btn reset" onclick="resetQuiz()">🔄 Cuba Lagi</button>
   </div>
 
   <div class="quiz-score" id="quizScore">
-    <div class="score-number" id="scoreNumber">0</div>
-    <div class="score-label">/ 10 betul</div>
-    <div class="score-msg" id="scoreMsg">Syabas!</div>
+    <div class="num" id="scoreNum">0</div>
+    <div class="lbl">/ 10 betul</div>
+    <div class="msg" id="scoreMsg">Syabas!</div>
   </div>
-</div>
+</section>
 
-<!-- ==================== NOTA GURU ==================== -->
-<div id="guru" class="section">
+<!-- ===== NOTA GURU ===== -->
+<section id="sec-guru" class="section">
+  <img class="section-img" src="images/teacher.jpg" alt="Guru mengajar di dalam kelas" loading="lazy">
   <h2>👩‍🏫 Nota untuk Guru</h2>
 
-  <img class="section-img" src="images/teacher.jpg" alt="Guru di dalam kelas">
-
-  <div class="teacher-note">
+  <div class="tnote yellow">
     <h3>📋 Cara Menggunakan Laman Ini</h3>
     <ul>
-      <li><strong>📖 Pelajaran</strong> — Baca dan bincang bersama murid tentang konsep asas daya.</li>
-      <li><strong>🔽 Jenis Daya</strong> — Klik kad untuk penerangan lanjut. Bincang contoh dalam kehidupan harian.</li>
-      <li><strong>🧩 Aktiviti</strong> — Murid seret jawapan ke petak yang betul. Boleh dibuat secara individu atau berkumpulan.</li>
+      <li><strong>📖 Pelajaran</strong> — Baca dan bincang dengan murid tentang konsep asas daya.</li>
+      <li><strong>🔽 Jenis Daya</strong> — Tekan kad untuk penerangan. Bincang contoh harian.</li>
+      <li><strong>🧩 Aktiviti</strong> — Murid seret jawapan ke petak betul. Boleh secara individu atau berkumpulan.</li>
       <li><strong>🏆 Kuiz</strong> — Uji kefahaman murid. 10 soalan objektif dengan markah automatik.</li>
     </ul>
   </div>
 
-  <div class="teacher-note green">
-    <h3>💡 Cara Host Laman Ini (Pilihan)</h3>
+  <div class="tnote green">
+    <h3>💡 Cara Host / Kongsi Laman Ini</h3>
     <ul>
-      <li><strong>📂 Buka terus dari komputer</strong> — Download fail HTML, klik dua kali buka di browser.</li>
-      <li><strong>🌐 Google Sites</strong> — Boleh embed sebagai HTML dalam Google Sites (guna widget Embed).</li>
-      <li><strong>🌍 Link Hosting</strong> — Guna link yang Cikgu dah ada sekarang. Boleh share dengan murid.</li>
-      <li><strong>📱 Google Drive</strong> — Upload ke Drive dan buka dengan preview.</li>
+      <li><strong>📂 Buka dari komputer:</strong> Download fail, klik dua kali buka di browser.</li>
+      <li><strong>🌍 Link online:</strong> Guna link yang Cikgu dah ada. Boleh share di WhatsApp atau Google Classroom.</li>
+      <li><strong>🌐 Google Sites:</strong> Guna widget Embed untuk masukkan laman ini.</li>
     </ul>
   </div>
 
-  <div class="teacher-note blue">
+  <div class="tnote blue">
     <h3>🎯 Objektif Pembelajaran (DSKP Sains Tahun 6)</h3>
     <ul>
       <li>✅ 7.1.1 Menyatakan maksud daya.</li>
@@ -653,52 +358,108 @@ Contoh:
       <li>✅ 7.1.4 Mengaplikasikan pengetahuan daya dalam kehidupan harian.</li>
     </ul>
   </div>
-
-  <p style="text-align:center;color:#888;margin-top:20px;">📅 Sains Tahun 6 | Topik: Daya</p>
-</div>
+</section>
 
 </div>
 
-<!-- ==================== FOOTER ==================== -->
-<div class="footer">
-  <div class="footer-divider"></div>
+<footer class="footer">
+  <div class="div"></div>
   <p style="font-size:1.2em;font-weight:bold;">👩‍🏫 Dibangunkan oleh Cikgu Nadirah</p>
-  <p style="margin-top:4px;opacity:0.7;">© 2026</p>
-  <div class="footer-divider"></div>
+  <p style="margin-top:4px;opacity:.7;">© 2026</p>
+  <div class="div"></div>
   <p>Sains Tahun 6 — Topik Daya &amp; Gerakan</p>
-</div>
+</footer>
 
 <script>
+'use strict';
+
 // ===================== NAVIGATION =====================
+const navBar = document.getElementById('navBar');
+const sections = {
+  pelajaran: document.getElementById('sec-pelajaran'),
+  jenis: document.getElementById('sec-jenis'),
+  aktiviti: document.getElementById('sec-aktiviti'),
+  kuiz: document.getElementById('sec-kuiz'),
+  guru: document.getElementById('sec-guru')
+};
+
 function showSection(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  if (event && event.target) event.target.classList.add('active');
+  // Hide all sections
+  Object.values(sections).forEach(s => s && s.classList.remove('active'));
+  // Show target
+  if (sections[id]) sections[id].classList.add('active');
+  // Update nav buttons
+  navBar.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const btn = navBar.querySelector(`[data-section="${id}"]`);
+  if (btn) btn.classList.add('active');
+  // Scroll to top of content
+  document.querySelector('.container').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ===================== DRAG & DROP =====================
+// Nav button click handlers
+navBar.addEventListener('click', function(e) {
+  const btn = e.target.closest('.nav-btn');
+  if (btn) {
+    const id = btn.getAttribute('data-section');
+    if (id && sections[id]) showSection(id);
+  }
+});
+
+// ===================== FORCE CARDS =====================
+const forceInfo = {
+  tolakan: '💪 Daya TOLAKAN\n\nDaya yang menolak objek MENJAUHI kita.\n\nContoh:\n• Menolak meja\n• Meniup belon\n• Menekan butang',
+  tarikan: '🤲 Daya TARIKAN\n\nDaya yang menarik objek MENDEKATI kita.\n\nContoh:\n• Menarik tali\n• Membuka pintu\n• Mengangkat buku',
+  geseran: '🧲 Daya GESERAN\n\nDaya yang MELAWAN pergerakan.\nSemakin kasar permukaan, semakin besar daya geseran.\n\nContoh:\n• Brek basikal\n• Tapak kasut\n• Memadam pensel',
+  graviti: '⬇️ Daya GRAVITI\n\nDaya tarikan BUMI yang menarik semua objek ke bawah.\n\nContoh:\n• Epal jatuh dari pokok\n• Air hujan turun\n• Bola jatuh ke lantai',
+  magnet: '🧲 Daya MAGNET\n\nDaya yang wujud pada MAGNET.\nBoleh menarik besi, keluli, nikel.\n\nContoh:\n• Magnet peti ais\n• Kompas\n• Mainan magnet'
+};
+
+document.getElementById('forceCards').addEventListener('click', function(e) {
+  const card = e.target.closest('.force-card');
+  if (card) {
+    const force = card.getAttribute('data-force');
+    if (force && forceInfo[force]) {
+      alert(forceInfo[force]);
+    }
+  }
+});
+
+// ===================== DRAG AND DROP =====================
 const dragItems = document.querySelectorAll('.drag-item');
 const dropZones = document.querySelectorAll('.drop-zone');
-let draggedItem = null;
+let draggedEl = null;
 
-dragItems.forEach(item => {
-  item.addEventListener('dragstart', function(e) {
-    draggedItem = this;
-    setTimeout(() => this.style.opacity = '0.4', 0);
+dragItems.forEach(el => {
+  el.addEventListener('dragstart', function(e) {
+    draggedEl = this;
+    this.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
   });
-  item.addEventListener('dragend', function() {
-    this.style.opacity = '1';
+  el.addEventListener('dragend', function() {
+    this.classList.remove('dragging');
   });
-  item.addEventListener('touchstart', function(e) {
-    draggedItem = this;
-    this.style.opacity = '0.4';
+  // Touch support for mobile
+  el.addEventListener('touchstart', function(e) {
+    draggedEl = this;
+    this.classList.add('dragging');
   });
-  item.addEventListener('touchend', function(e) {
-    this.style.opacity = '1';
+  el.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+    dropZones.forEach(z => z.classList.remove('drag-over'));
+    if (target && target.classList.contains('drop-zone')) {
+      target.classList.add('drag-over');
+    }
+  });
+  el.addEventListener('touchend', function(e) {
+    this.classList.remove('dragging');
     const touch = e.changedTouches[0];
     const target = document.elementFromPoint(touch.clientX, touch.clientY);
-    if (target && target.classList.contains('drop-zone')) handleDrop(target);
+    dropZones.forEach(z => z.classList.remove('drag-over'));
+    if (target && target.classList.contains('drop-zone')) {
+      doDrop(target);
+    }
   });
 });
 
@@ -708,118 +469,145 @@ dropZones.forEach(zone => {
   zone.addEventListener('drop', function(e) {
     e.preventDefault();
     this.classList.remove('drag-over');
-    handleDrop(this);
+    doDrop(this);
   });
 });
 
-function handleDrop(zone) {
-  if (!draggedItem || zone.dataset.filled) return;
-  zone.textContent = draggedItem.textContent;
-  zone.dataset.filled = draggedItem.dataset.answer;
+function doDrop(zone) {
+  if (!draggedEl) return;
+  const answer = draggedEl.getAttribute('data-answer');
+  if (zone.getAttribute('data-filled')) return; // already filled
+
+  zone.textContent = draggedEl.textContent;
+  zone.setAttribute('data-filled', answer);
   zone.classList.add('filled');
-  draggedItem.style.display = 'none';
+  draggedEl.style.display = 'none';
   document.getElementById('activityResult').classList.remove('show');
 }
 
 function checkActivity() {
   const result = document.getElementById('activityResult');
-  let correct = 0;
-  let total = 0;
+  let correct = 0, total = 0;
   dropZones.forEach(zone => {
     total++;
-    if (zone.dataset.filled === zone.dataset.correct) { correct++; zone.style.borderColor = '#43e97b'; zone.style.background = '#d4edda'; }
-    else if (zone.dataset.filled) { zone.style.borderColor = '#f5576c'; zone.style.background = '#f8d7da'; }
+    const filled = zone.getAttribute('data-filled');
+    const correctAns = zone.getAttribute('data-correct');
+    if (filled === correctAns) {
+      correct++;
+      zone.style.borderColor = '#43e97b';
+      zone.style.background = '#d4edda';
+    } else if (filled) {
+      zone.style.borderColor = '#f5576c';
+      zone.style.background = '#f8d7da';
+    }
   });
   result.classList.add('show');
   if (correct === total) {
-    result.className = 'activity-result show correct';
-    result.innerHTML = '🎉 <strong>Tahniah!</strong> Semua jawapan betul! Anda memang POWER! ⚡';
+    result.className = 'activity-result show ok';
+    result.innerHTML = '🎉 <strong>Tahniah!</strong> Semua jawapan betul! Anda POWER! ⚡';
   } else {
-    result.className = 'activity-result show wrong';
-    result.innerHTML = `😅 ${correct}/${total} betul. Cuba lagi untuk dapatkan semua betul! 💪`;
+    result.className = 'activity-result show fail';
+    result.innerHTML = '😅 ' + correct + '/' + total + ' betul. Cuba lagi! 💪';
   }
 }
 
 function resetActivity() {
   const labels = ['Menolak kereta sorong','Mengangkat buku','Brek basikal','Epal jatuh ke tanah'];
-  dropZones.forEach((zone,i) => {
+  dropZones.forEach((zone, i) => {
     zone.textContent = labels[i];
-    zone.dataset.filled = '';
+    zone.removeAttribute('data-filled');
     zone.classList.remove('filled');
-    zone.style.borderColor = ''; zone.style.background = '';
+    zone.style.borderColor = '';
+    zone.style.background = '';
   });
-  dragItems.forEach(item => item.style.display = '');
+  dragItems.forEach(el => el.style.display = '');
   document.getElementById('activityResult').classList.remove('show');
 }
 
 // ===================== KUIZ =====================
 const quizData = [
-  { q: 'Apakah maksud DAYA?', options: ['Tarikan atau tolakan pada objek', 'Hanya tolakan pada objek', 'Hanya tarikan pada objek', 'Gerakan objek sahaja'], correct: 0 },
-  { q: 'Antara berikut, yang manakah contoh DAYA TOLAKAN?', options: ['Menarik tali', 'Menolak kereta sorong', 'Mengangkat buku', 'Membuka pintu'], correct: 1 },
-  { q: 'Daya yang MELAWAN pergerakan sesuatu objek dipanggil...', options: ['Daya graviti', 'Daya magnet', 'Daya geseran', 'Daya tarikan'], correct: 2 },
-  { q: 'Epal jatuh dari pokok ke tanah disebabkan oleh...', options: ['Daya tolakan', 'Daya magnet', 'Daya geseran', 'Daya graviti'], correct: 3 },
-  { q: 'Antara berikut, yang manakah BUKAN kesan daya?', options: ['Menggerakkan objek', 'Mengubah warna objek', 'Mengubah bentuk objek', 'Memberhentikan objek'], correct: 1 },
-  { q: 'Mengapakah tapak kasut mempunyai corak?', options: ['Untuk cantik', 'Untuk menambah daya geseran', 'Untuk murah', 'Untuk ringan'], correct: 1 },
-  { q: 'Bahan apakah yang TERTARIK kepada magnet?', options: ['Kayu', 'Plastik', 'Besi', 'Kertas'], correct: 2 },
-  { q: 'Apabila kita meniup belon, daya yang digunakan ialah...', options: ['Daya tarikan', 'Daya geseran', 'Daya tolakan', 'Daya graviti'], correct: 2 },
-  { q: 'Brek basikal menggunakan konsep daya...', options: ['Graviti', 'Geseran', 'Magnet', 'Tolakan'], correct: 1 },
-  { q: 'Apakah yang akan berlaku jika TIADA daya graviti di Bumi?', options: ['Semua benda akan terbang', 'Semua benda menjadi berat', 'Semua benda berhenti bergerak', 'Semua benda menjadi panas'], correct: 0 }
+  { q: 'Apakah maksud DAYA?', o: ['Tarikan atau tolakan pada objek', 'Hanya tolakan pada objek', 'Hanya tarikan pada objek', 'Gerakan objek sahaja'], c: 0 },
+  { q: 'Antara berikut, yang manakah contoh DAYA TOLAKAN?', o: ['Menarik tali', 'Menolak kereta sorong', 'Mengangkat buku', 'Membuka pintu'], c: 1 },
+  { q: 'Daya yang MELAWAN pergerakan sesuatu objek dipanggil...', o: ['Daya graviti', 'Daya magnet', 'Daya geseran', 'Daya tarikan'], c: 2 },
+  { q: 'Epal jatuh dari pokok ke tanah disebabkan oleh...', o: ['Daya tolakan', 'Daya magnet', 'Daya geseran', 'Daya graviti'], c: 3 },
+  { q: 'Antara berikut, yang manakah BUKAN kesan daya?', o: ['Menggerakkan objek', 'Mengubah warna objek', 'Mengubah bentuk objek', 'Memberhentikan objek'], c: 1 },
+  { q: 'Mengapakah tapak kasut mempunyai corak?', o: ['Untuk cantik', 'Untuk menambah daya geseran', 'Untuk murah', 'Untuk ringan'], c: 1 },
+  { q: 'Bahan apakah yang TERTARIK kepada magnet?', o: ['Kayu', 'Plastik', 'Besi', 'Kertas'], c: 2 },
+  { q: 'Apabila kita meniup belon, daya yang digunakan ialah...', o: ['Daya tarikan', 'Daya geseran', 'Daya tolakan', 'Daya graviti'], c: 2 },
+  { q: 'Brek basikal menggunakan konsep daya...', o: ['Graviti', 'Geseran', 'Magnet', 'Tolakan'], c: 1 },
+  { q: 'Apakah yang akan berlaku jika TIADA daya graviti di Bumi?', o: ['Semua benda akan terbang', 'Semua benda menjadi berat', 'Semua benda berhenti bergerak', 'Semua benda menjadi panas'], c: 0 }
 ];
 
-let quizAnswered = false;
+let quizLocked = false;
 
 function renderQuiz() {
   const container = document.getElementById('quizContainer');
   let html = '';
   quizData.forEach((item, idx) => {
-    html += '<div class="quiz-question" data-idx="' + idx + '">' +
-      '<div class="q-text"><span class="num">' + (idx+1) + '</span> ' + item.q + '</div>' +
-      '<div class="quiz-options">';
-    item.options.forEach((opt, optIdx) => {
-      html += '<div class="quiz-option" data-q="' + idx + '" data-opt="' + optIdx + '" onclick="selectOption(' + idx + ',' + optIdx + ')">' + opt + '</div>';
+    html += '<div class="quiz-q" data-idx="' + idx + '">';
+    html += '<div class="q-text"><span class="num">' + (idx + 1) + '</span> ' + item.q + '</div>';
+    html += '<div class="quiz-opts">';
+    item.o.forEach((opt, oi) => {
+      html += '<div class="quiz-opt" role="button" tabindex="0" data-q="' + idx + '" data-opt="' + oi + '">' + opt + '</div>';
     });
     html += '</div></div>';
   });
   container.innerHTML = html;
+
+  // Attach click listeners
+  container.querySelectorAll('.quiz-opt').forEach(el => {
+    el.addEventListener('click', function() { selectOpt(this); });
+  });
 }
 
-function selectOption(qIdx, optIdx) {
-  if (quizAnswered) return;
-  const options = document.querySelectorAll('.quiz-option[data-q="' + qIdx + '"]');
-  options.forEach(o => o.classList.remove('selected'));
-  options[optIdx].classList.add('selected');
+function selectOpt(el) {
+  if (quizLocked) return;
+  const qIdx = el.getAttribute('data-q');
+  // Deselect others in same question
+  const siblings = el.parentElement.querySelectorAll('.quiz-opt');
+  siblings.forEach(s => s.classList.remove('sel'));
+  el.classList.add('sel');
 }
 
 function checkQuiz() {
-  quizAnswered = true;
+  quizLocked = true;
   let correct = 0;
   quizData.forEach((item, idx) => {
-    const options = document.querySelectorAll('.quiz-option[data-q="' + idx + '"]');
-    const selected = document.querySelector('.quiz-option[data-q="' + idx + '"].selected');
-    options.forEach((o, oi) => {
+    const opts = document.querySelectorAll('.quiz-opt[data-q="' + idx + '"]');
+    const selected = document.querySelector('.quiz-opt[data-q="' + idx + '"].sel');
+    opts.forEach((o, oi) => {
       o.style.pointerEvents = 'none';
-      if (oi === item.correct) o.classList.add('correct');
-      else if (o.classList.contains('selected')) o.classList.add('wrong');
+      if (oi === item.c) o.classList.add('correct');
+      else if (o.classList.contains('sel')) o.classList.add('wrong');
     });
-    if (selected && parseInt(selected.dataset.opt) === item.correct) correct++;
+    if (selected && parseInt(selected.getAttribute('data-opt')) === item.c) correct++;
   });
   const scoreDiv = document.getElementById('quizScore');
-  document.getElementById('scoreNumber').textContent = correct;
-  const msgs = ['😅 Jangan putus asa! Cuba lagi! 💪','📚 Cuba lagi, kamu pasti boleh!','👍 Teruskan usaha!','👏 Bagus! Teruskan!','🌟 Hebat! Hampir cemerlang!','🎉 CEMERLANG! Tahniah! ⭐'];
-  document.getElementById('scoreMsg').textContent = msgs[Math.min(correct,5)];
+  document.getElementById('scoreNum').textContent = correct;
+  const msgs = [
+    '😅 Jangan putus asa! Cuba lagi! 💪',
+    '📚 Cuba lagi, kamu pasti boleh!',
+    '👍 Teruskan usaha!',
+    '👏 Bagus! Teruskan!',
+    '🌟 Hebat! Hampir cemerlang!',
+    '🎉 CEMERLANG! Tahniah! ⭐'
+  ];
+  document.getElementById('scoreMsg').textContent = msgs[Math.min(correct, 5)];
   scoreDiv.classList.add('show');
 }
 
 function resetQuiz() {
-  quizAnswered = false;
-  document.querySelectorAll('.quiz-option').forEach(o => {
-    o.classList.remove('selected','correct','wrong');
+  quizLocked = false;
+  document.querySelectorAll('.quiz-opt').forEach(o => {
+    o.classList.remove('sel', 'correct', 'wrong');
     o.style.pointerEvents = '';
   });
   document.getElementById('quizScore').classList.remove('show');
 }
 
+// Init
 renderQuiz();
+console.log('Laman web Daya Sains Tahun 6 siap! 🚀');
 </script>
 </body>
 </html>
